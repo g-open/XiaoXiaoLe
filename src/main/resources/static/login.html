@@ -3,10 +3,39 @@
 <head>
 <title>Druid Web Session Stat</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf8" />
+<script src="/js/jquery/jquery-3.2.1.min.js"></script>
+<script type="text/javascript">
+function test(){
+  var username = $("#username").val();
+  var password = $("#password").val();
+  
+  $.ajax({
+    url:'login/in',
+    data:{
+      "username":username,
+      "password":password
+    },
+    type:'post',
+    dataType:'json',
+    success:function(data) {
+      /* if(data.flag == 'Y'){
+        window.location.href();
+      } */
+      window.location.href = "/index.html";
+      
+    }
+  });
+  
+  
+  /* alert("username = " + username + ", password = " + password); */
+}
+</script>
 </head>
 <body>
   <div>
-    请登入！！
+    用户名: <input type="text" name="username" id="username" />
+    密  码: <input type="password" name="password" id="password" />
+    <button onclick="test()" type="button">登入</button>
   </div>
 </body>
 </html>
