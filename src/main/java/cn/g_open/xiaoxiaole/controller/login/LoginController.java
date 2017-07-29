@@ -1,19 +1,22 @@
 package cn.g_open.xiaoxiaole.controller.login;
 
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
+import java.util.HashMap;
+import java.util.Map;
 
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
-@Controller
-@RequestMapping("login")
+@RestController
+@RequestMapping("/login")
 public class LoginController
 {   
-    @RequestMapping("in")
-    public void login(HttpServletRequest request,HttpServletResponse response){
-        String username = request.getParameter("username");
-        String password = request.getParameter("password");
-        
+    @RequestMapping("/in")
+    public Map<String, String> login(String username, String password){
+        Map<String, String> map = new HashMap<String, String>();
+        map.put("username", username);
+        map.put("password", password);
+        return map;
     }
+    
+    
 }

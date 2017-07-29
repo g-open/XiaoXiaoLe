@@ -7,7 +7,7 @@ import org.springframework.boot.web.servlet.ServletComponentScan;
 
 @SpringBootApplication
 @ServletComponentScan
-@MapperScan("cn.g_open.game.db.mapper")
+@MapperScan("cn.g_open.xiaoxiaole.db.mapper")
 public class XiaoxiaoleApplication {
 
 	public static void main(String[] args) {
