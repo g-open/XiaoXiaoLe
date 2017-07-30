@@ -6,15 +6,15 @@
 	<context id="net_worm">
 		<plugin type="org.mybatis.generator.plugins.AddLimitOffsetPlugin" />
 		<jdbcConnection driverClass="com.mysql.jdbc.Driver"
-			connectionURL="jdbc:mysql://localhost:3306/game" userId="gjh"
+			connectionURL="jdbc:mysql://localhost:3306/xiaoxiaole" userId="gjh"
 			password="P@55w0rd" />
-		<javaModelGenerator targetPackage="cn.g_open.game.db.model"
-			targetProject="game/database" />
-		<sqlMapGenerator targetPackage="cn.g_open.game.db.mapper"
-			targetProject="game/database" />
-		<javaClientGenerator targetPackage="cn.g_open.game.db.mapper"
-			targetProject="game/database" type="XMLMAPPER" />
-		<table schema="game" tableName="accountInfo" domainObjectName="accountInfo">
+		<javaModelGenerator targetPackage="cn.g_open.xiaoxiaole.db.model"
+			targetProject="xiaoxiaole/database" />
+		<sqlMapGenerator targetPackage="cn.g_open.xiaoxiaole.db.mapper"
+			targetProject="xiaoxiaole/database" />
+		<javaClientGenerator targetPackage="cn.g_open.xiaoxiaole.db.mapper"
+			targetProject="xiaoxiaole/database" type="XMLMAPPER" />
+		<table schema="xiaoxiaole" tableName="user_info" domainObjectName="UserInfo">
 			<property name="useActualColumnNames" value="true" />
 			<generatedKey column="id" sqlStatement="MySql" identity="true" />
 			<columnOverride column="createDate" jdbcType="TIMESTAMP"/>
