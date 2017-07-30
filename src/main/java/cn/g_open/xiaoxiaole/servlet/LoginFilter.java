@@ -17,7 +17,7 @@ import javax.servlet.http.HttpSession;
 import cn.g_open.xiaoxiaole.domainModel.LoginUser;
 
 @WebFilter(filterName = "LoginFilter", urlPatterns = "/*", initParams = {
-        @WebInitParam(name = "exclusions", value = "*.js,*.gif,*.jpg,*.bmp,*.png,*.css,*.ico,/ip/*,/login.html,/login/*,/html/login/*,/druid/*") })
+        @WebInitParam(name = "exclusions", value = "*.js,*.gif,*.jpg,*.bmp,*.png,*.css,*.ico,/ip/*,/login.html,/register.html,/login/*,/druid/*") })
 public class LoginFilter implements Filter
 {
     private String exclusions;
