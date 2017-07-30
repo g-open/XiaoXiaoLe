@@ -1,16 +1,16 @@
 <!doctype html>
 <html>
 <head>
-<title>欢迎登入g_open</title>
+<title>注册页面</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf8" />
 <script src="/js/jquery/jquery-3.2.1.min.js"></script>
 <script type="text/javascript">
-function login(){
+function register(){
   var username = $("#username").val();
   var password = $("#password").val();
   
   $.ajax({
-    url:'/login/in',
+    url:'/login/save',
     data:{
       "username":username,
       "password":password
@@ -19,7 +19,8 @@ function login(){
     dataType:'json',
     success:function(data) {
       if(data.flag == true){
-        window.location.href = "/html/login/index.html";
+        alert(data.msg);
+        window.location.href = "/login.html";
       }else {
         alert(data.msg);
       }
@@ -27,8 +28,8 @@ function login(){
   });
 }
 
-function toRegister(){
-  window.location.href = "/html/login/register.html";
+function backToLogin(){
+  window.location.href = "/login.html";
 }
 </script>
 </head>
@@ -36,8 +37,8 @@ function toRegister(){
   <div>
     用户名: <input type="text" name="username" id="username" />
     密  码: <input type="password" name="password" id="password" />
-    <button onclick="login()" type="button">登入</button>
-    <button onclick="toRegister()" type="button">注册</button>
+    <button onclick="register()" type="button">注册</button>
+    <button onclick="backToLogin()" type="button">返回登入</button>
   </div>
 </body>
 </html>

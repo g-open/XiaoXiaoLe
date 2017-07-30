@@ -38,6 +38,7 @@ public class LoginController
             user.setUsername(username);
             user.setPassword(password);
             session.setAttribute("loginUser", user);
+            session.setMaxInactiveInterval(10);
             baseResModel.setFlag(true);
             baseResModel.setMsg("验证成功!");
         }
@@ -67,7 +68,7 @@ public class LoginController
             userInfo.setCreateBy("admin");
             userInfo.setCreateDate(new Date());
             userInfo.setModifyBy("admin");
-            userInfo.setCreateDate(new Date());
+            userInfo.setModifyDate(new Date());
             boolean flag = userInfoBiz.saveUserInfo(userInfo);
             if(flag){
                 baseResModel.setFlag(true);

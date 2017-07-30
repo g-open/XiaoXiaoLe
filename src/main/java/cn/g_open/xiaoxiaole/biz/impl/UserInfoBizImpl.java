@@ -3,6 +3,7 @@ package cn.g_open.xiaoxiaole.biz.impl;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import cn.g_open.xiaoxiaole.biz.UserInfoBiz;
 import cn.g_open.xiaoxiaole.db.mapper.UserInfoMapper;
@@ -10,6 +11,7 @@ import cn.g_open.xiaoxiaole.db.model.UserInfo;
 import cn.g_open.xiaoxiaole.db.model.UserInfoExample;
 import cn.g_open.xiaoxiaole.db.model.UserInfoExample.Criteria;
 
+@Service
 public class UserInfoBizImpl implements UserInfoBiz
 {
 
@@ -23,11 +25,8 @@ public class UserInfoBizImpl implements UserInfoBiz
         Criteria criteria = example.createCriteria();
         criteria.andUsernameEqualTo(username);
         criteria.andPasswordEqualTo(password);
-        List<UserInfo> list = userInfoMapper.selectByExample(example);
-        if(list != null){
-            return list.size();
-        }
-        return 0;
+        int count = userInfoMapper.countByExample(example);
+        return count;
     }
 
     @Override
@@ -36,11 +35,8 @@ public class UserInfoBizImpl implements UserInfoBiz
         UserInfoExample example = new UserInfoExample();
         Criteria criteria = example.createCriteria();
         criteria.andUsernameEqualTo(username);
-        List<UserInfo> list = userInfoMapper.selectByExample(example);
-        if(list != null){
-            return list.size();
-        }
-        return 0;
+        int count = userInfoMapper.countByExample(example);
+        return count;
     }
 
     @Override
